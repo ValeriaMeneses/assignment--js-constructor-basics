@@ -18,11 +18,59 @@
  *     [2]. `showTags`: return all tags from the current photo in a string
  */
 
+ PhotoAlbum = function() {
+   this.input=[];
+
+ }
+
+ PhotoAlbum.prototype.addPicture = function(photo){
+   this.input.push(photo)
+ }
+
+ PhotoAlbum.prototype.showPictures = function (filter) {
+   this.arrayTitle = []
+   for (var i = 0; i < this.input.length; i++) {
+     this.arrayTitle.push(this.input[i])
+   }
+   return this.arrayTitle
+
+ };
+
+ Photo = function (name) {
+   this.name = name
+   this.arrayTag = []
+
+ }
+
+ Photo.prototype.tag = function (nameTag) {
+   this.arrayTag.push(nameTag)
+ };
+
+ Photo.prototype.showTags = function() {
+   return this.arrayTag.join(', ')
+ }
 
 
+var album = new PhotoAlbum();
+var p1, p2, p3;
 
+p1 = new Photo("Paris Trip 1");
+p1.tag("Jimmy");
+p1.tag("Jane");
+p1.tag("Jeff");
 
+album.addPicture(p1);
 
+p2 = new Photo("Look the Eiffel");
+p2.tag("Jimmy");
+p2.tag("Max");
+album.addPicture(p2);
+
+p3 = new Photo("OMG it's so high");
+p3.tag("Jimmy");
+p3.tag("Jane");
+
+album.addPicture(p3);
 
 
 

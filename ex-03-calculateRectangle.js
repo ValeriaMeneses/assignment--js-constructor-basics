@@ -4,13 +4,30 @@
  *     [1]. `area`, formula to calculate it: L x L
  *     [2]. `perimeter`: formula to calculate it: L + L + L + L
  */
+Rectangle = function(l1, l2) {
+  this.lado1 = l1,
+  this.lado2 = l2
 
+}
+
+Rectangle.prototype.area = function () {
+this.area = this.lado1*this.lado2
+console.log(this.area);
+return this.area
+
+};
+
+Rectangle.prototype.perimeter = function () {
+this.perimeter=this.lado1 +this.lado2 +this.lado1+ this.lado2
+console.log(this.perimeter);
+return this.perimeter
+};
 
 
 
 
 var r = new Rectangle(7, 3);
-
+console.log(r);
 console.log("[1] Check if `Rectangle` is a function")
 console.assert( typeof Rectangle === 'function' )
 console.log("[1] ==================================================")
